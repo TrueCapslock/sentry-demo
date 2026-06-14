@@ -1,0 +1,25 @@
+{"id":"sourcemap-glitchtip","label":"Last opp source maps → GlitchTip","duration":1879,"exitCode":1,"status":"failure","timestamp":"2026-06-14T13:07:42.644Z"}
+{"id":"release-glitchtip","label":"Bygg + source maps → GlitchTip","duration":3,"exitCode":-1,"status":"failure","timestamp":"2026-06-14T13:08:56.980Z"}
+{"id":"react-dev","label":"Dev server","duration":6378,"exitCode":3221225786,"status":"failure","timestamp":"2026-06-14T13:10:08.619Z"}
+{"id":"react-build","label":"Build","duration":32943,"exitCode":0,"status":"success","timestamp":"2026-06-14T13:10:44.382Z"}
+{"id":"react-test","label":"Test","duration":981,"exitCode":1,"status":"failure","timestamp":"2026-06-14T13:10:48.606Z"}
+{"id":"react-lint","label":"Lint","duration":82730,"exitCode":0,"status":"success","timestamp":"2026-06-14T13:12:18.322Z"}
+{"id":"react-typecheck","label":"TypeCheck","duration":1320,"exitCode":0,"status":"success","timestamp":"2026-06-14T13:15:50.119Z"}
+{"id":"react-preview","label":"Preview build","duration":54758,"exitCode":3221225786,"status":"failure","timestamp":"2026-06-14T13:16:48.877Z"}
+{"id":"sourcemap-glitchtip","label":"Last opp source maps → GlitchTip","duration":1785,"exitCode":1,"status":"failure","timestamp":"2026-06-14T13:26:14.413Z"}
+{"id":"sourcemap-glitchtip","label":"Last opp source maps → GlitchTip","duration":84,"exitCode":255,"status":"failure","timestamp":"2026-06-14T13:31:06.263Z"}
+{"id":"sourcemap-glitchtip","label":"Last opp source maps → GlitchTip","duration":83,"exitCode":255,"status":"failure","timestamp":"2026-06-14T13:38:52.334Z"}
+{"id":"build","label":"Build","duration":34600,"exitCode":0,"status":"success","timestamp":"2026-06-14T13:43:02.895Z"}
+{"id":"demo-errors","label":"Åpne demo (feilsporing)","duration":618,"exitCode":0,"status":"success","timestamp":"2026-06-14T13:43:05.221Z"}
+{"id":"sourcemap-glitchtip","label":"Last opp source maps → GlitchTip","duration":322,"exitCode":1,"status":"failure","timestamp":"2026-06-14T13:43:18.339Z"}
+{"id":"sourcemap-glitchtip","label":"Last opp source maps → GlitchTip","duration":385,"exitCode":0,"status":"success","timestamp":"2026-06-14T13:53:17.246Z"}
+{"id":"build","label":"Build","duration":46418,"exitCode":0,"status":"success","timestamp":"2026-06-14T13:58:38.736Z"}
+{"id":"demo-errors","label":"Åpne demo (feilsporing)","duration":475,"exitCode":0,"status":"success","timestamp":"2026-06-14T13:58:41.698Z"}
+{"id":"Watch","label":"Watch","duration":942416,"exitCode":3221225786,"status":"failure","timestamp":"2026-06-14T14:09:07.610Z"}
+{"id":"sourcemap-sentry","label":"Last opp source maps → Sentry.io","duration":74187,"exitCode":2,"status":"failure","timestamp":"2026-06-14T14:35:59.448Z"}
+{"id":"sourcemap-sentry","label":"Last opp source maps → Sentry.io","duration":2239,"exitCode":2,"status":"failure","timestamp":"2026-06-14T14:36:37.886Z"}
+{"id":"Watch","label":"Watch","duration":807281,"exitCode":3221225786,"status":"failure","timestamp":"2026-06-14T14:59:25.186Z"}
+{"id":"sourcemap-sentry","label":"Last opp source maps → Sentry.io","duration":54588,"exitCode":1,"status":"failure","timestamp":"2026-06-14T15:47:48.923Z"}
+{"id":"build","label":"Build","duration":38197,"exitCode":0,"status":"success","timestamp":"2026-06-14T15:55:06.651Z"}
+{"id":"Watch","label":"Watch","duration":11011712,"exitCode":3221225786,"status":"failure","timestamp":"2026-06-14T18:03:05.632Z"}
+{"id":"build","label":"Build","duration":100803,"exitCode":0,"status":"success","timestamp":"2026-06-14T18:04:51.450Z"}
