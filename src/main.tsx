@@ -33,7 +33,8 @@ function safeJsonify(obj: unknown): string {
   })
 }
 
-function forwardToGlitchtip(event: Sentry.Event) {
+function forwardToGlitchtip(event: Sentry.Event, hint?: Sentry.EventHint) {
+  console.log("[sentry-debug] event type:", event.type, "| exception:", !!event.exception, "| message:", !!event.message, "| transaction:", event.transaction, "| title:", event.title, "| hint type:", hint?.event_id)
   if (!GLITCHTIP_STORE || !GLITCHTIP_KEY) return event
   if (event.type && event.type !== "transaction") return event
   if (!event.exception && !event.message && !event.transaction) return event
@@ -62,8 +63,8 @@ Sentry.init({
       autoInject: false,
     }),
   ],
-  beforeSend: forwardToGlitchtip as any,
-  beforeSendTransaction: forwardToGlitchtip as any,
+  beforeSend: (e, h) => { console.log("[sentry] beforeSend called"); return forwardToGlitchtip(e, h) as any; },
+  beforeSendTransaction: (e, h) => { console.log("[sentry] beforeSendTransaction called"); return forwardToGlitchtip(e, h) as any; },
   // debug: true,
   tracesSampleRate: 1.0,
   replaysSessionSampleRate: 0.1,
