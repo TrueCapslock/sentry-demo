@@ -4,26 +4,26 @@ import * as Sentry from "@sentry/react";
 import App from "./App.tsx";
 import "./index.css";
 
-const SENTRY_DSN = import.meta.env.VITE_SENTRY_DSN ?? "https://1966b0f67a725c2b1601d2af52f9f5eb@o4508376266309632.ingest.de.sentry.io/4511564169478224";
+const SENTRY_DSN = import.meta.env.VITE_SENTRY_DSN ?? "";
 
 const GLITCHTIP_DSN = import.meta.env.VITE_GLITCHTIP_DSN ?? "";
 
 function getGlitchtipStore(dsn: string) {
   try {
-    const url = new URL(dsn)
-    const key = url.username
-    const projectId = dsn.split("/").pop()
-    if (!key || !projectId) return { store: "", key: "" }
-    return { store: `${url.protocol}//${url.host}/api/${projectId}/store/`, key }
+    const url = new URL(dsn);
+    const key = url.username;
+    const projectId = dsn.split("/").pop();
+    if (!key || !projectId) return { store: "", key: "" };
+    return { store: `${url.protocol}//${url.host}/api/${projectId}/store/`, key };
   } catch {
-    return { store: "", key: "" }
+    return { store: "", key: "" };
   }
 }
 
-const { store: GLITCHTIP_STORE, key: GLITCHTIP_KEY } = getGlitchtipStore(GLITCHTIP_DSN)
+const { store: GLITCHTIP_STORE, key: GLITCHTIP_KEY } = getGlitchtipStore(GLITCHTIP_DSN);
 
 function forwardToGlitchtip(event: Sentry.Event) {
-  if (!GLITCHTIP_STORE || !GLITCHTIP_KEY) return event
+  if (!GLITCHTIP_STORE || !GLITCHTIP_KEY) return event;
   fetch(`${GLITCHTIP_STORE}?sentry_key=${GLITCHTIP_KEY}`, {
     method: "POST",
     body: JSON.stringify(event),
@@ -31,8 +31,8 @@ function forwardToGlitchtip(event: Sentry.Event) {
       "Content-Type": "application/json",
       "X-Sentry-Auth": `Sentry sentry_version=7, sentry_key=${GLITCHTIP_KEY}`,
     },
-  }).catch(() => {})
-  return event
+  }).catch(() => {});
+  return event;
 }
 
 Sentry.init({
