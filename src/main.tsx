@@ -34,10 +34,8 @@ function safeJsonify(obj: unknown): string {
 }
 
 function forwardToGlitchtip(event: Sentry.Event) {
-  console.log("[sentry-debug] event type:", event.type, "| exception:", !!event.exception, "| message:", !!event.message, "| transaction:", event.transaction)
   if (!GLITCHTIP_STORE || !GLITCHTIP_KEY) return event
-  if (event.type && event.type !== "transaction") return event
-  if (!event.exception && !event.message && !event.transaction) return event
+  if (!event.exception && !event.message) return event
   fetch(`${GLITCHTIP_STORE}?sentry_key=${GLITCHTIP_KEY}`, {
     method: "POST",
     body: safeJsonify(event),
@@ -63,8 +61,7 @@ Sentry.init({
       autoInject: false,
     }),
   ],
-  beforeSend: (e) => { console.log("[sentry] beforeSend called"); return forwardToGlitchtip(e) as any; },
-  beforeSendTransaction: (e) => { console.log("[sentry] beforeSendTransaction called"); return forwardToGlitchtip(e) as any; },
+  beforeSend: (e) => forwardToGlitchtip(e) as any,
   // debug: true,
   tracesSampleRate: 1.0,
   replaysSessionSampleRate: 0.1,
