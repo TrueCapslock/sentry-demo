@@ -13,6 +13,8 @@ dist-ssr
 *.local
 .env
 .env.local
+glitchtip-cli.exe
+.developer-control-center/
 
 # Editor directories and files
 .vscode/*
