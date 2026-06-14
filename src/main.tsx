@@ -35,6 +35,9 @@ function safeJsonify(obj: unknown): string {
 
 function forwardToGlitchtip(event: Sentry.Event) {
   if (!GLITCHTIP_STORE || !GLITCHTIP_KEY) return event
+  const isRealError = event.exception || event.message
+  const isRealTransaction = event.type === "transaction" && event.transaction
+  if (!isRealError && !isRealTransaction) return event
   fetch(`${GLITCHTIP_STORE}?sentry_key=${GLITCHTIP_KEY}`, {
     method: "POST",
     body: safeJsonify(event),
