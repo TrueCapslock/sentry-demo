@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import DemoAppSlide, { pushLog } from "../slides/DemoAppSlide.tsx";
 
-vi.mock("@sentry/react", async (importOriginal) => {
+vi.mock("@sentry/react", async () => {
   const React = (await import("react")) as any;
 
   class ErrorBoundary extends React.Component {

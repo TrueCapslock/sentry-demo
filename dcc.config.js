@@ -13,6 +13,16 @@ export default {
       command: "npm run dev",
     },
     {
+      id: "test",
+      label: "Test",
+      command: "npm test",
+    },
+    {
+      id: "test-watch",
+      label: "Test (watch)",
+      command: "npm run test:watch",
+    },
+    {
       id: "demo-errors",
       label: "Åpne demo (feilsporing)",
       command: 'start chrome "http://localhost:5173"',
@@ -32,16 +42,6 @@ export default {
         "echo ++ Ferdig!",
         "pause",
       ].join(" && "),
-    },
-    {
-      id: "test",
-      label: "Test",
-      command: "npm test",
-    },
-    {
-      id: "test-watch",
-      label: "Test (watch)",
-      command: "npm run test:watch",
     },
     {
       id: "sourcemap-sentry",

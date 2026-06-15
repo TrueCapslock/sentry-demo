@@ -5,7 +5,6 @@ import App from "./App.tsx";
 import "./index.css";
 
 const SENTRY_DSN = import.meta.env.VITE_SENTRY_DSN ?? "";
-
 const GLITCHTIP_DSN = import.meta.env.VITE_GLITCHTIP_DSN ?? "";
 
 function getGlitchtipStore(dsn: string) {
@@ -23,19 +22,19 @@ function getGlitchtipStore(dsn: string) {
 const { store: GLITCHTIP_STORE, key: GLITCHTIP_KEY } = getGlitchtipStore(GLITCHTIP_DSN);
 
 function safeJsonify(obj: unknown): string {
-  const seen = new WeakSet()
+  const seen = new WeakSet();
   return JSON.stringify(obj, (_, value) => {
     if (typeof value === "object" && value !== null) {
-      if (seen.has(value)) return "[Circular]"
-      seen.add(value)
+      if (seen.has(value)) return "[Circular]";
+      seen.add(value);
     }
-    return value
-  })
+    return value;
+  });
 }
 
 function forwardToGlitchtip(event: Sentry.Event) {
-  if (!GLITCHTIP_STORE || !GLITCHTIP_KEY) return event
-  if (!event.exception && !event.message) return event
+  if (!GLITCHTIP_STORE || !GLITCHTIP_KEY) return event;
+  if (!event.exception && !event.message) return event;
   fetch(`${GLITCHTIP_STORE}?sentry_key=${GLITCHTIP_KEY}`, {
     method: "POST",
     body: safeJsonify(event),
@@ -43,8 +42,8 @@ function forwardToGlitchtip(event: Sentry.Event) {
       "Content-Type": "application/json",
       "X-Sentry-Auth": `Sentry sentry_version=7, sentry_key=${GLITCHTIP_KEY}`,
     },
-  }).catch(() => {})
-  return event
+  }).catch(() => {});
+  return event;
 }
 
 Sentry.init({
