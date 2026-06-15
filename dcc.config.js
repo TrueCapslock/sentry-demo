@@ -34,6 +34,16 @@ export default {
       ].join(" && "),
     },
     {
+      id: "test",
+      label: "Test",
+      command: "npm test",
+    },
+    {
+      id: "test-watch",
+      label: "Test (watch)",
+      command: "npm run test:watch",
+    },
+    {
       id: "sourcemap-sentry",
       label: "Last opp source maps → Sentry.io",
       command: ["npx @sentry/wizard@latest -i sourcemaps"],
