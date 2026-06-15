@@ -28,7 +28,7 @@ Bunnlinjen viser slide-nummer, fremdriftsindikator og navigasjonsknapper.
 
 1. **Velkommen** — introduksjon
 2. **Agenda** — oversikt over presentasjonen
-3. **Hva er Sentry?** — om feilsporingsverktøyet
+3. **Hva er applikasjonsovervåking?** — om feilsporingsverktøyet
 4. **Plattform** — GlitchTip vs Sentry
 5. **Oppsett** — hvordan Sentry ble installert
 6. **Feilsporing** — knapper som sender ulike typer feil
