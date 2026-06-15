@@ -1,7 +1,7 @@
 export default function AboutSlide() {
   return (
     <div className="slide">
-      <h2>Hva er applikasjonsovervåking?</h2>
+      <h2>Hva er App-overvåking?</h2>
       <div className="card-grid">
         <div className="card">
           <div className="card-icon">🔍</div>

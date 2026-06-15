@@ -5,7 +5,7 @@ import App from "../App.tsx";
 describe("App", () => {
   it("renders the first slide with title", () => {
     render(<App />);
-    expect(screen.getByText("Applikasjonsovervåking")).toBeInTheDocument();
+    expect(screen.getByText("App-overvåking")).toBeInTheDocument();
   });
 
   it("shows slide counter", () => {

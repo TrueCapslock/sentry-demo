@@ -5,7 +5,7 @@ export default function WelcomeSlide() {
   return (
     <div className="slide welcome">
       <div className="slide-bg-icon">🦋</div>
-      <h1 className="title">Applikasjonsovervåking</h1>
+      <h1 className="title">App-overvåking</h1>
       <p className="subtitle">Feilovervåking og ytelsesmonitorering i produksjon</p>
       <div className="meta">
         <span>Demo · Juni 2026</span>

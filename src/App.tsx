@@ -21,7 +21,7 @@ const slides = [
   <SummarySlide />,
 ];
 
-const slideLabels = ["Velkommen", "Agenda", "Hva er applikasjonsovervåking?", "Plattform", "Oppsett", "Feilsporing", "Demo-app + Dashboard", "Ytelse", "Oppsummering"];
+const slideLabels = ["Velkommen", "Agenda", "Hva er App-overvåking?", "Plattform", "Oppsett", "Feilsporing", "Demo-app + Dashboard", "Ytelse", "Oppsummering"];
 
 export default function App() {
   return <SlideDeck slides={slides} slideLabels={slideLabels} />;

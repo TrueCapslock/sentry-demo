@@ -4,7 +4,7 @@ export default function AgendaSlide() {
       <h2>Agenda</h2>
       <ul className="agenda">
         <li>
-          <span className="num">1</span> Hva er applikasjonsovervåking?
+          <span className="num">1</span> Hva er App-overvåking?
         </li>
         <li>
           <span className="num">2</span> Nøkkelfunksjoner
